@@ -111,10 +111,6 @@ module.exports = function font2svg(fontBuf, options, cb) {
 
           var glyphs = result.svg.font[0].glyph;
 
-          for (var i = 1; i < glyphs.length; i++) {
-            glyphs[i].$.unicode = '&#' + uniquePoints[i] + ';';
-          }
-
           var svgString = xmlBuilder.buildObject(result).replace(/&amp;/g, '&');
 
           if (encoding) {
